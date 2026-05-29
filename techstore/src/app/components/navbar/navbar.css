@@ -1,0 +1,105 @@
+.ts-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 0 var(--color-border);
+}
+
+.ts-navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-block: .875rem;
+}
+
+.ts-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -.03em;
+  white-space: nowrap;
+}
+.ts-navbar__brand:hover { color: var(--color-accent); }
+
+.ts-navbar__logo {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.ts-navbar__links {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.ts-navbar__links a {
+  display: block;
+  padding: .4rem .75rem;
+  border-radius: var(--radius-sm);
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.ts-navbar__links a:hover { color: var(--color-text); background: var(--color-bg); }
+.ts-navbar__links a.active { color: var(--color-text); font-weight: 600; background: var(--color-bg); }
+
+.ts-navbar__badge {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+.ts-navbar__badge.active,
+.ts-navbar__badge:hover {
+  background: #fde68a !important;
+}
+
+.ts-navbar__actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+
+.ts-navbar__logout {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-muted);
+  font-size: .875rem;
+  border-radius: var(--radius-md) !important;
+}
+.ts-navbar__logout:hover { border-color: var(--color-danger); color: var(--color-danger); background: #fef2f2; }
+
+/* Toggler personalizado */
+.ts-navbar__toggler {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: .5rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-left: auto;
+}
+.ts-navbar__toggler span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@media (max-width: 991px) {
+  .ts-navbar__toggler { display: flex; }
+  .ts-navbar__links { flex-direction: column; align-items: flex-start; padding: .75rem 0; gap: .125rem; }
+  .ts-navbar__actions { padding: .5rem 0; }
+}

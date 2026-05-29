@@ -1,0 +1,40 @@
+.ts-footer {
+  background: var(--color-primary);
+  color: #94a3b8;
+  padding: 4rem 0 0;
+  margin-top: auto;
+}
+.ts-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+@media (max-width: 768px) {
+  .ts-footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+.ts-footer__logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.03em;
+  margin-bottom: .75rem;
+}
+.ts-footer__brand p { font-size: .875rem; line-height: 1.7; max-width: 280px; }
+.ts-footer__heading {
+  color: #fff;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 1rem;
+}
+.ts-footer__list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: .6rem;
+  font-size: .875rem;
+}
+.ts-footer__list a { color: #94a3b8; text-decoration: none; transition: color .15s; }
+.ts-footer__list a:hover { color: var(--color-accent); }
+.ts-footer__bottom { padding: 1.5rem 0; font-size: .8rem; text-align: center; color: #475569; }

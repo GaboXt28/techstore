@@ -1,0 +1,77 @@
+<div>
+
+  <!-- ── Hero ───────────────────────────────────────────────────────────────── -->
+  <section class="ts-hero">
+    <div class="container">
+      <div class="ts-hero__content">
+        <span class="chip">🇵🇪 Envíos a todo el Perú</span>
+        <h1 class="display-hero mt-3">
+          La tecnología que<br>
+          <span class="text-accent">mereces,</span> al precio<br>
+          que buscas.
+        </h1>
+        <p class="ts-hero__sub">
+          Laptops, smartphones, monitores y más. La mejor selección del mercado peruano con garantía oficial.
+        </p>
+        <div class="ts-hero__cta">
+          <a routerLink="/productos" class="btn btn-warning btn-lg px-4">Ver productos</a>
+          <a routerLink="/ofertas"   class="btn btn-outline-dark btn-lg px-4">Ver ofertas 🔥</a>
+        </div>
+      </div>
+    </div>
+    <div class="ts-hero__bg"></div>
+  </section>
+
+  <!-- ── Categorías ─────────────────────────────────────────────────────────── -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Categorías</h2>
+      <div class="ts-categories">
+        <div class="ts-category" *ngFor="let cat of categorias">
+          <span>{{ cat }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Productos destacados ───────────────────────────────────────────────── -->
+  <section class="py-5 ts-section-alt">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title mb-0">Destacados</h2>
+        <a routerLink="/productos" class="ts-link-arrow">Ver todos →</a>
+      </div>
+
+      <div class="ts-products-grid">
+        <div class="ts-product-card" *ngFor="let p of productosDestacados">
+          <div class="ts-product-card__img">
+            <img [src]="p.imagen" [alt]="p.nombre">
+          </div>
+          <div class="ts-product-card__body">
+            <span class="chip">{{ p.categoria }}</span>
+            <h6 class="ts-product-card__name">{{ p.nombre }}</h6>
+            <div class="ts-product-card__footer">
+              <span class="ts-product-card__price">{{ p.precio | currency:'PEN':'S/ ' }}</span>
+              <a routerLink="/productos" class="btn btn-warning btn-sm">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="productosDestacados.length === 0" class="text-center py-5 text-muted">
+        <div class="spinner-border text-warning mb-3"></div>
+        <p>Cargando productos…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Banner CTA ─────────────────────────────────────────────────────────── -->
+  <section class="ts-cta">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-2">¿Listo para actualizar tu tecnología?</h2>
+      <p class="ts-cta__sub mb-4">Envíos a todo el Perú · Pagos seguros · Garantía oficial</p>
+      <a routerLink="/tienda" class="btn btn-warning btn-lg px-5">Ir a la tienda</a>
+    </div>
+  </section>
+
+</div>

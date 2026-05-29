@@ -1,0 +1,58 @@
+.ts-page-header { margin-bottom: 2rem; }
+
+.ts-filters {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.ts-filters__search { max-width: 360px; }
+.ts-filters__select { max-width: 220px; }
+.ts-filters__clear  { white-space: nowrap; }
+
+.ts-loader { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 5rem 0; color: var(--color-muted); }
+
+.ts-empty { text-align: center; padding: 5rem 0; }
+.ts-empty__icon { font-size: 3rem; margin-bottom: 1rem; }
+
+.ts-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.ts-product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+.ts-product-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+.ts-product-card__img {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+.ts-product-card__img img { width:100%; height:100%; object-fit:cover; transition: transform .3s; }
+.ts-product-card:hover .ts-product-card__img img { transform: scale(1.05); }
+.ts-product-card__badge {
+  position: absolute; top: .75rem; right: .75rem;
+  background: #ef4444; color: #fff;
+  font-size: .7rem; font-weight: 700;
+  padding: .25rem .6rem; border-radius: 99px;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.ts-product-card__body { padding: 1.25rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.ts-product-card__name { font-weight: 600; font-size: .9rem; margin: 0; line-height: 1.4; }
+.ts-product-card__desc { font-size: .8rem; color: var(--color-muted); margin: 0; line-height: 1.5; }
+.ts-product-card__footer {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: auto; padding-top: .75rem; border-top: 1px solid var(--color-border);
+}
+.ts-product-card__price { font-weight: 700; font-size: 1.05rem; }
+.ts-product-card__stock { font-size: .75rem; color: var(--color-muted); }

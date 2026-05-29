@@ -1,0 +1,15 @@
+{
+  "productos": [
+    { "id": 1, "nombre": "Laptop Gamer ASUS ROG", "imagen": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400", "categoria": "Laptops", "precio": 4500, "stock": 12, "oferta": false, "descripcion": "Laptop gamer con RTX 4060, 16GB RAM, 512GB SSD" },
+    { "id": 2, "nombre": "iPhone 15 Pro", "imagen": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400", "categoria": "Smartphones", "precio": 5200, "stock": 8, "oferta": true, "descripcion": "Smartphone Apple con chip A17 Pro, cámara 48MP" },
+    { "id": 3, "nombre": "Monitor Samsung 27 4K", "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400", "categoria": "Monitores", "precio": 1800, "stock": 15, "oferta": true, "descripcion": "Monitor 4K UHD 144Hz con panel IPS" },
+    { "id": 4, "nombre": "Teclado Mecánico Logitech G915", "imagen": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400", "categoria": "Periféricos", "precio": 950, "stock": 20, "oferta": false, "descripcion": "Teclado mecánico inalámbrico RGB, switches GL" },
+    { "id": 5, "nombre": "Auriculares Sony WH-1000XM5", "imagen": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", "categoria": "Audio", "precio": 1350, "stock": 10, "oferta": false, "descripcion": "Auriculares con cancelación de ruido premium" },
+    { "id": 6, "nombre": "SSD Samsung 1TB NVMe", "imagen": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400", "categoria": "Almacenamiento", "precio": 420, "stock": 30, "oferta": true, "descripcion": "Disco sólido NVMe PCIe 4.0, velocidad 7000MB/s" },
+    { "id": 7, "nombre": "iPad Pro M2", "imagen": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400", "categoria": "Tablets", "precio": 4100, "stock": 6, "oferta": false, "descripcion": "Tablet Apple con chip M2, pantalla Liquid Retina XDR" },
+    { "id": 8, "nombre": "Mouse Razer DeathAdder V3", "imagen": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400", "categoria": "Periféricos", "precio": 380, "stock": 25, "oferta": true, "descripcion": "Mouse gamer ergonómico con sensor Focus Pro 30K" }
+  ],
+  "usuarios": [
+    { "id": 1, "nombre": "Admin TechStore", "email": "admin@techstore.com", "password": "admin123", "rol": "admin" }
+  ]
+}

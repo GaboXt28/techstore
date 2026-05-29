@@ -1,0 +1,64 @@
+<div class="container py-5">
+
+  <div class="ts-page-header">
+    <h2 class="section-title mb-1">Productos</h2>
+    <p class="text-muted">{{ productosFiltrados.length }} resultado{{ productosFiltrados.length !== 1 ? 's' : '' }}</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="ts-filters">
+    <input type="text" class="form-control ts-filters__search"
+           placeholder="🔍  Buscar producto…"
+           [(ngModel)]="busqueda" (input)="filtrar()">
+    <select class="form-select ts-filters__select"
+            [(ngModel)]="categoriaSeleccionada" (change)="filtrar()">
+      <option value="">Todas las categorías</option>
+      <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+    </select>
+    <button *ngIf="busqueda || categoriaSeleccionada"
+            class="btn btn-outline-dark btn-sm ts-filters__clear"
+            (click)="limpiarFiltros()">
+      ✕ Limpiar
+    </button>
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="cargando" class="ts-loader">
+    <div class="spinner-border text-warning"></div>
+    <p>Cargando productos…</p>
+  </div>
+
+  <!-- Sin resultados -->
+  <div *ngIf="!cargando && productosFiltrados.length === 0" class="ts-empty">
+    <div class="ts-empty__icon">🔍</div>
+    <h5>Sin resultados</h5>
+    <p class="text-muted">Intenta con otro término o categoría</p>
+    <button class="btn btn-warning btn-sm" (click)="limpiarFiltros()">Ver todos</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="ts-products-grid" *ngIf="!cargando && productosFiltrados.length > 0">
+    <div class="ts-product-card" *ngFor="let p of productosFiltrados">
+      <div class="ts-product-card__img">
+        <img [src]="p.imagen" [alt]="p.nombre">
+        <span *ngIf="p.oferta" class="ts-product-card__badge">Oferta</span>
+      </div>
+      <div class="ts-product-card__body">
+        <span class="chip">{{ p.categoria }}</span>
+        <h6 class="ts-product-card__name">{{ p.nombre }}</h6>
+        <p class="ts-product-card__desc">{{ p.descripcion }}</p>
+        <div class="ts-product-card__footer">
+          <div>
+            <div class="ts-product-card__price"
+                 [ngStyle]="{'color': p.oferta ? '#ef4444' : 'var(--color-text)'}">
+              {{ p.precio | currency:'PEN':'S/ ' }}
+            </div>
+            <div class="ts-product-card__stock">Stock: {{ p.stock }}</div>
+          </div>
+          <button class="btn btn-warning btn-sm">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

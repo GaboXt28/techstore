@@ -1,0 +1,35 @@
+.ts-login {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #fef3c7 0%, transparent 60%),
+              var(--color-bg);
+}
+.ts-login__card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+.ts-login__header { text-align: center; margin-bottom: 2rem; }
+.ts-login__icon { font-size: 2.5rem; line-height: 1; margin-bottom: .75rem; }
+.ts-login__title { font-size: 1.5rem; font-weight: 800; letter-spacing: -.04em; margin-bottom: .25rem; }
+.ts-login__sub { color: var(--color-muted); font-size: .9rem; margin: 0; }
+
+.ts-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.ts-form__group { display: flex; flex-direction: column; gap: .4rem; }
+.ts-form__label { font-size: .85rem; font-weight: 600; color: var(--color-text); }
+
+.ts-login__hint {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--color-muted);
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
