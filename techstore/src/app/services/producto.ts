@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 
 export interface Producto {
   id: number;
@@ -16,7 +16,7 @@ export interface Producto {
 
 @Injectable({ providedIn: 'root' })
 export class ProductoService {
-  private apiUrl = 'http://localhost:3000/productos';
+  private apiUrl = 'https://my-json-server.typicode.com/GaboXt28/techstore/productos';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +28,8 @@ export class ProductoService {
   }
 
   getOfertas(): Observable<Producto[]> {
-    return this.http.get<Producto[]>(`${this.apiUrl}?oferta=true`).pipe(
+    return this.http.get<Producto[]>(this.apiUrl).pipe(
+      map(productos => productos.filter(p => p.oferta === true)),
       catchError(this.handleError)
     );
   }
